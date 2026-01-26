@@ -1,0 +1,230 @@
+# ✅ LeetCode → GitHub Workflow (Follow This Every Time)
+
+This file is your **no-thinking, copy‑paste‑and‑execute workflow**.
+
+If you follow this for 7 days straight, your hands will learn it automatically.
+
+---
+
+## 🧠 ONE RULE (READ THIS FIRST)
+
+> **GitHub only uploads files that exist inside your local repo folder.**
+
+LeetCode website ≠ GitHub.
+
+You must create a file on your Mac first.
+
+---
+
+# 🔁 THE FULL FLOW (HIGH LEVEL)
+
+```
+Solve on LeetCode
+↓
+Copy accepted solution
+↓
+Create file in local repo
+↓
+Paste solution into template
+↓
+git add → commit → push
+```
+
+---
+
+# ✅ STEP‑BY‑STEP (DO NOT SKIP)
+
+---
+
+## STEP 0 — Solve on LeetCode
+
+• Solve the problem on the LeetCode website
+• Copy your **final accepted solution**
+
+---
+
+## STEP 1 — Open Terminal and go to repo
+
+```bash
+cd ~/neetgod
+```
+
+Confirm:
+
+```bash
+ls
+```
+
+You should see folders like:
+
+```
+strings
+arrays
+hashmap
+```
+
+If not → you are in the wrong folder.
+
+---
+
+## STEP 2 — Create the file
+
+Choose the correct category.
+
+Example: strings
+
+```bash
+touch strings/lc_387_first_unique_character.py
+```
+
+✅ This creates the file on your Mac.
+
+---
+
+## STEP 3 — Open file in VS Code
+
+```bash
+code strings/lc_387_first_unique_character.py
+```
+
+VS Code opens the file.
+
+---
+
+## STEP 4 — Paste template + solution
+
+Paste this structure (modify content as needed):
+
+```python
+"""
+LeetCode 387 — First Unique Character in a String
+Difficulty: Easy
+
+Patterns: hashmap, frequency, two-pass
+
+Recognition:
+- "first" → order matters
+- "non-repeating" → counting
+
+Key Idea:
+- Count character frequency
+- Scan again to preserve order
+
+Time: O(n)
+Space: O(1)
+"""
+
+from collections import defaultdict
+
+
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        count = defaultdict(int)
+
+        for c in s:
+            count[c] += 1
+
+        for i, c in enumerate(s):
+            if count[c] == 1:
+                return i
+
+        return -1
+```
+
+Save the file.
+
+---
+
+## STEP 5 — Check Git status
+
+```bash
+git status
+```
+
+You should see:
+
+```
+new file: strings/lc_387_first_unique_character.py
+```
+
+This is GOOD.
+
+---
+
+## STEP 6 — Stage changes
+
+```bash
+git add .
+```
+
+---
+
+## STEP 7 — Commit
+
+```bash
+git commit -m "Add LC 387"
+```
+
+---
+
+## STEP 8 — Push to GitHub
+
+```bash
+git push
+```
+
+✅ DONE.
+
+Your solution now lives permanently in GitHub.
+
+---
+
+# 🧠 THE MUSCLE‑MEMORY LOOP
+
+Memorize this:
+
+```
+solve
+copy
+cd repo
+touch file
+code file
+paste
+save
+git add .
+git commit
+git push
+```
+
+No variations.
+No improvising.
+
+---
+
+# 🚫 DO NOT DO THESE
+
+❌ Do not create files in Finder
+❌ Do not use TextEdit or Notes
+❌ Do not save on Desktop
+❌ Do not drag files into repo
+
+Everything must be created **inside the repo folder**.
+
+---
+
+# 🎯 GOAL
+
+After 7 days of repetition:
+
+• Terminal feels automatic
+• Git commands feel mechanical
+• LeetCode → GitHub takes < 2 minutes
+• No confusion, no panic
+
+This is how real engineers build workflow confidence.
+
+---
+
+✅ Follow this exactly.
+
+No thinking required.
